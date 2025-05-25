@@ -7,13 +7,18 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-
-  constructor(private http:HttpClient) { }
-
-  loginUser(obj:User):Observable<IUserModal>{
-    console.log("obj ",obj);
-    
-    return this.http.post<IUserModal>('https://api.freeprojectapi.com/api/SmartParking/login',obj);
+  loggedInData!: IUserModal
+  constructor(private http: HttpClient) {
+    const userdata = localStorage.getItem('logindata')
+    if (userdata != null) {
+      this.loggedInData = JSON.parse(userdata)
+    }
   }
-  
+
+  loginUser(obj: User): Observable<IUserModal> {
+    console.log("obj ", obj);
+
+    return this.http.post<IUserModal>('https://api.freeprojectapi.com/api/SmartParking/login', obj);
+  }
+
 } 

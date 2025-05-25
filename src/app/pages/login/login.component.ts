@@ -20,6 +20,7 @@ onLogin(){
 this.userservice.loginUser(this.loginObj).subscribe((data:IUserModal)=>{
 //alert("Valid credentials");
 localStorage.setItem("logindata",JSON.stringify(data))
+this.userservice.loggedInData=data
 this.router.navigateByUrl('/dashboard')
 },error=>{
  this.router.navigateByUrl('')

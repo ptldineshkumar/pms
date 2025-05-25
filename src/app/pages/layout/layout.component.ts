@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-layout',
@@ -9,4 +10,8 @@ import { RouterOutlet } from '@angular/router';
 })
 export class LayoutComponent {
 
+  usersrv=inject(UserService)
+  
+
+  
 }
