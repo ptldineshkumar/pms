@@ -5,8 +5,39 @@
             <p class="text-muted">Manage and monitor parking spots</p>
         </div>
         <div class="mt-2 mt-md-0">
-            <input type="text" class="form-control" placeholder="Search spot number..." style="width: 250px;" />
+            <div class="row g-1 flex-nowrap">
+                <div class="col-3">
+                    <select class="form-select">
+                        <option selected>Select site </option>
+
+                        @for (item of siteList; track $index) {
+                        <option [value]="item.siteId">{{item.siteName}}</option>
+
+                        }
+
+
+                    </select>
+                </div>
+                <div class="col-4 ">
+                    <select class="form-select">
+                        <option selected>Select Building</option>
+                        <option>Building X</option>
+                        <option>Building Y</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <select class="form-select">
+                        <option selected>Select Floor</option>
+                        <option>Floor 1</option>
+                        <option>Floor 2</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-primary w-100">Search</button>
+                </div>
+            </div>
         </div>
+
     </div>
 
     <div class="row g-4 mt-3">
@@ -81,4 +112,3 @@
         </div>
     </div>
 </div>
-

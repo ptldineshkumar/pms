@@ -17,3 +17,19 @@ export interface IUserModal {
   mobileNo: string
   extraId: any
 }
+
+export interface ResponseModal {
+  message: string
+  result: boolean
+  data: []
+}
+export interface ISite {
+  siteId: number
+  clientId: number
+  siteName: string
+  siteCity: string
+  siteAddress: string
+  sitePinCode: string
+  totalBuildings: number
+  createdDate: string
+}
