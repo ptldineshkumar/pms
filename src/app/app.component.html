@@ -1,14 +1,9 @@
+<div class="container">
+<nav>
+    <a routerLink="login">Template driven Form</a>
+    <a routerLink="reactiveForm">Reactive Form</a>
+</nav>
+</div>
+
 <router-outlet></router-outlet>
 
-<div class="forms">
-<form [formGroup]="form">
-<div formArrayName="contacts">
-<div *ngFor="let control of contacts.controls; let i=index">
-<input [formControlName]="i" placeholder="Enter contact details"/>
-<button type="button" (click)="removeContact(i)" *ngIf="contacts.length>1 ">removeContact</button>
-</div>
-</div>
-<button type="button" (click)="addContacts()">Add Contact</button>
-</form> 
-
-</div>
